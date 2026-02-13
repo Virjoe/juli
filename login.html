@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Valentine ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+
+    /* LOGIN BOX */
+    .login-box {
+      background: white;
+      padding: 25px;
+      width: 90%;
+      max-width: 330px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      font-size: 35px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    h2 {
+      color: #e63946;
+      margin: 15px 0;
+    }
+
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #e63946;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    button:hover {
+      background: #d62839;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    /* LOADING SCREEN */
+    .loading {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .loading-heart {
+      font-size: 50px;
+      animation: pulse 1s infinite;
+    }
+
+    .loading-text {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="login-box" id="loginBox">
+    <div class="heart">❤️</div>
+    <h2>Welcome, My Love</h2>
+
+    <input type="text" id="username" placeholder="Your Name">
+    <input type="password" id="password" placeholder="Secret Code">
+
+    <button onclick="login()">Log In</button>
+    <div class="error" id="error"></div>
+  </div>
+
+  
+  <div class="loading" id="loadingScreen">
+    <div class="loading-heart">❤️</div>
+    <div class="loading-text">Loading our love...</div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const error = document.getElementById("error");
+
+      const correctUser = "Juliana";
+      const correctPass = "05/14/25";
+
+      if (username === correctUser && password === correctPass) {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("loadingScreen").style.display = "flex";
+
+        setTimeout(() => {
+          window.location.href = "main.html";
+        }, 2500); 
+      } else {
+        error.textContent = "Wrong name or secret 💔";
+      }
+    }
+  </script>
+
+</body>
+</html>

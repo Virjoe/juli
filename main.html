@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
+
+<style>
+:root {
+  --pink: #e63946;
+  --soft: #fff0f3;
+  --dark: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--soft);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* FLOATING HEARTS */
+.heart {
+  position: fixed;
+  color: rgba(230,57,70,0.35);
+  animation: float 6s linear infinite;
+}
+@keyframes float {
+  from { transform: translateY(100vh); opacity: 1; }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* SECTIONS */
+section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s ease;
+}
+
+.container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.hero span {
+  font-size: 60px;
+  display: block;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  50% { transform: scale(1.15); }
+}
+
+/* CORE MEMORIES */
+.memories {
+  background: #fff;
+}
+
+.cards {
+  display: grid;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: var(--soft);
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  border-radius: 18px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: 1s ease;
+}
+
+.card.show img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* BUTTON */
+.view-btn {
+  margin-top: 15px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff758f, #ff4d6d);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  animation: glow 2s infinite;
+  transition: transform .3s;
+}
+
+.view-btn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes glow {
+  50% { box-shadow: 0 0 18px rgba(255,77,109,0.7); }
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 20px;
+  text-align: center;
+  animation: pop .5s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* DESKTOP: ONE PER SCROLL */
+@media (min-width: 768px) {
+  .cards {
+    display: block;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+  .card {
+    min-height: 85vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* FINAL */
+.final {
+  background: #111;
+  color: white;
+}
+
+.signature {
+  margin-top: 40px;
+  color: #ffb3c1;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="container">
+    <span>❤️</span>
+    <h1>Juliana</h1>
+    <p>Hello, baby! ❤️
+
+Happy Valentine’s Day and happy 9th month anniversary! I made this digital love letter just for you, and I hope it brings a smile to your face. I know it’s not much, but every word, every detail comes straight from my heart. I want you to know how much I truly love you, you mean the world to me, and I love you so deeply, so badly, more than I can ever express in words.
+<br><br>
+I wish you nothing but the best, always. I wish for your happiness, your dreams to come true, and for every day to bring you joy and laughter. I hope that I can be there to support you, to make you smile, and to share every beautiful moment of life with you.
+<br><br>
+Thank you for being the amazing person that you are, for making every day brighter, and for filling my heart with so much love. I love you endlessly, baby, and I can’t wait to make even more memories with you. You’re my everything, and I promise to cherish you, adore you, and love you more with every single day we spend together. 💖</p>
+  </div>
+</section>
+
+<section class="memories">
+  <div class="container">
+    <h2>Core Memories</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="0.jfif">
+        <p>First Date</p>
+        <button class="view-btn" onclick="openModal('Our first date is a memory I will always treasure. We watched the Minecraft movie, and I couldn’t help but feel shy because you looked even more gorgeous in person. We laughed, we watched, and I cherished every moment by your side. After the movie, we walked to the park and talked about everything and nothing, just enjoying being together. On the way home, I thought I heard you say you wanted to kiss me but I had misunderstood. Still, I kissed you, and you welcomed it with that beautiful smile. That day will forever be etched in my heart, because it’s the day I fell for you even more deeply.')">
+          View That Day
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="1.jfif">
+        <p>Laughing together.</p>
+        <button class="view-btn" onclick="openModal('This is our first photo together, taken at Baywalk. We shared pizza and watched the sunset, savoring every moment. We went home late, soaked in the rain, because we didn’t want to be apart. That day, simple as it was, will always be one of my favorite memories with you.')">
+          View That Day
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="2.jfif">
+        <p>Comfort.</p>
+        <button class="view-btn" onclick="openModal('This is the cutest photo we ever took together, at the mall. We were goofing around and having so much fun. Afterward, we took some cute photos, but this one still stands out to me even today. It was such a joyful day, and I loved every moment of it because I got to see your beautiful smile the whole time.')">
+          View That Day
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="3.jfif">
+        <p>Moments that stay.</p>
+        <button class="view-btn" onclick="openModal('TThis photo was taken on my birthday, a day I honestly didn’t feel very happy. I was carrying so much sadness, but the moment I was with you, all of it seemed to melt away. You comforted me in ways only you could you held me close, hugged me tightly, and made me feel safe and loved. I was so thankful that you chose to celebrate my birthday with me, even when I didn’t feel like celebrating at all. The little mini cakes you brought were not just delicious they were a reminder of the thought and care you put into every detail. Every laugh we shared, every small moment we experienced that day, felt like a gift in itself. That day, more than anything, showed me your unconditional love, your patience, and your unwavering support. It’s a memory I will carry in my heart forever, a day that made me feel truly seen, cherished, and loved by you.')">
+          View That Day
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <h1>My Promise</h1>
+    <br> <br>
+    <p>My Juji,
+<br> <br>
+I want to make you some promises for our future, promises that come straight from my heart. I promise that I will always love you more with each passing day, to never take our love for granted, and to treasure every moment we share. I promise to stay by your side through the good times and the hard times, to support you, protect you, and be your safe place no matter what life throws at us.
+<br> <br>
+
+
+I promise to grow with you, to be patient and understanding, and to never let my immaturity get in the way of what we have. I will listen, I will learn, and I will do my best to be the person you deserve. I promise to laugh with you, to comfort you, and to make sure you always feel loved, cherished, and valued.
+<br> <br>
+No matter what the future holds, I will choose you, every single day. I will build our dreams with you, celebrate our victories, and hold your hand through every challenge. I promise to be your partner, your friend, your love, and your home. I love you more than words can ever express, and I promise to spend my life showing you just how much you mean to me.
+<br> <br>
+Forever and always, <br>
+love Juwow
+❤️</p>
+    <div class="signature">Forever yours ❤️</div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">×</span>
+  <div class="modal-content" id="modalText"></div>
+</div>
+
+<script>
+/* FLOATING HEARTS */
+setInterval(() => {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "❤️";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.fontSize = Math.random() * 20 + 15 + "px";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 6000);
+}, 500);
+
+/* SCROLL REVEAL */
+const items = document.querySelectorAll('.container, .card');
+window.addEventListener('scroll', () => {
+  items.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 120) {
+      el.classList.add('show');
+    }
+  });
+});
+
+/* MODAL */
+function openModal(text) {
+  document.getElementById('modalText').innerText = text;
+  document.getElementById('modal').style.display = 'flex';
+}
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
